@@ -10,14 +10,28 @@ public class score : MonoBehaviour
 
     public void addScore()
     {
-        playerscore =  playerscore + 1;
-        scoreText.text = playerscore.ToString();
+        if(GameOver.activeSelf)
+        {
+            Time.timeScale = 0f;
+        }
+        if (!GameOver.activeSelf)
+        {
+            playerscore = playerscore + 1;
+            scoreText.text = playerscore.ToString();
+        }
+        else
+        {  
+            playerscore = 0;
+            scoreText.text = playerscore.ToString();
+           
+        }
 
     }
     public void Restartgame()
     {
  
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1f;
     }
 
     public void gameOver()

@@ -6,7 +6,7 @@ public class Birds_Script : MonoBehaviour
     public Rigidbody2D myrigidbody2d;
     public int jump = 11;
     public score logic;
-   public bool birdalive = true;
+    public bool birdalive = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,8 +24,10 @@ public class Birds_Script : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && birdalive)
         {
-                myrigidbody2d.velocity = Vector2.up * jump;
+           // Debug.Log("Jump");
+            myrigidbody2d.velocity = Vector2.up * jump;
         }
+        //Debug.Log("No Jump");
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
