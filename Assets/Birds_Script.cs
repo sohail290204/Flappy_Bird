@@ -20,15 +20,14 @@ public class Birds_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("My boolean value is: " + birdalive);
-
+        // Check for input depending on the platform
         if (Input.GetKeyDown(KeyCode.Space) && birdalive)
         {
-           // Debug.Log("Jump");
+            // Debug.Log("Jump");
             myrigidbody2d.velocity = Vector2.up * jump;
         }
-        //Debug.Log("No Jump");
     }
+
     public void OnCollisionEnter2D(Collision2D collision)
     {
  
